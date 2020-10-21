@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace RentaCar_Praksa.Dal.Domain
 {
-    public class Car
+    public class Car:BaseEntity
     {
-        public int CarID { get; set; }
         public string CarName { get; set; }
         public int YearOFProduction { get; set; }
         public int HorsePower { get; set; }
@@ -18,7 +17,10 @@ namespace RentaCar_Praksa.Dal.Domain
         public Color Color { get; set; }
         public List<BookedCar> BookedCars { get; set; }
 
+        public Car(string username):base(username)
+        {
 
+        }
 
     }
 }

@@ -5,13 +5,16 @@ using System.Threading.Tasks;
 
 namespace RentaCar_Praksa.Dal.Domain
 {
-    public class UserRole
+    public class UserRole:BaseEntity
     {
-        public int UserRoleID { get; set; }
         public int UserID{ get; set; }
         public int RoleID { get; set; }
         public User User{ get; set; }
         public Role Role{ get; set; }
+        public UserRole(string username):base(username)
+        {
+
+        }
 
 
 

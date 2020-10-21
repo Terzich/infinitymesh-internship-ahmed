@@ -5,10 +5,13 @@ using System.Threading.Tasks;
 
 namespace RentaCar_Praksa.Dal.Domain
 {
-    public class City
+    public class City:BaseEntity
     {
-        public int CityID { get; set; }
         public string CityName { get; set; }
         public List<User> Users { get; set; }
+        public City(string username) : base(username)
+        {
+
+        }
     }
 }

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace RentaCar_Praksa.Dal.Domain
 {
-    public class BookedCar
+    public class BookedCar:BaseEntity
     {
-        public int BookedCarID { get; set; }
         public int CarID { get; set; }
         public int UserID { get; set; }
         public Car Car { get; set; }
@@ -18,6 +17,12 @@ namespace RentaCar_Praksa.Dal.Domain
         public decimal TotalPrice { get; set; }
         public int ReviewID { get; set; }
         public Review Review { get; set; }
+
+        public BookedCar(string username):base(username)
+        {
+
+        }
+
 
     }
 }

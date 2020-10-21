@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace RentaCar_Praksa.Dal.Domain
 {
-    public class Review
+    public class Review:BaseEntity
     {
         public int ReviewID { get; set; }
         public int BookedCarID { get; set; }
@@ -13,6 +13,11 @@ namespace RentaCar_Praksa.Dal.Domain
         public int Rating { get; set; }
         public string Comment { get; set; }
         public DateTime DateCreated { get; set; }
+        public Review(string username) : base(username)
+        {
+
+        }
+
 
     }
 }

@@ -5,10 +5,15 @@ using System.Threading.Tasks;
 
 namespace RentaCar_Praksa.Dal.Domain
 {
-    public class Color
+    public class Color:BaseEntity
     {
-        public int ColorID { get; set; }
         public string ColorName { get; set; }
         public List<Car> Cars { get; set; }
+
+
+        public Color(string username):base(username)
+        {
+
+        }
     }
 }
