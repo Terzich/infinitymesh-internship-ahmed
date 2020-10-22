@@ -9,9 +9,6 @@ namespace RentaCar_Praksa.Dal.Domain
     {
         public string CityName { get; set; }
         public List<User> Users { get; set; }
-        public City(string username) : base(username)
-        {
-
-        }
+        
     }
 }

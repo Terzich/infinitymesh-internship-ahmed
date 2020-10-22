@@ -9,12 +9,11 @@ namespace RentaCar_Praksa.Dal.Domain
         public int Id { get; set; }
         public string CreatedBy { get; set; }
         public DateTime CreatedAt { get; set; }
+        public DateTime ModifideAt { get; set; }
 
-        protected BaseEntity(string username)
+        protected BaseEntity()
         {
             CreatedAt = DateTime.UtcNow;
-            CreatedBy = username;
-
         }
 
 

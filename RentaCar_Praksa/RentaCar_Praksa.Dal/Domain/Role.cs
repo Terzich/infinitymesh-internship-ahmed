@@ -8,13 +8,6 @@ namespace RentaCar_Praksa.Dal.Domain
     public class Role:BaseEntity
     {
         public string RoleName { get; set; }
-        public List<UserRole> UserRole { get; set; }
-
-        public Role(string username):base(username)
-        {
-
-        }
-
-
+        public List<UserRole> UserRoles { get; set; }
     }
 }

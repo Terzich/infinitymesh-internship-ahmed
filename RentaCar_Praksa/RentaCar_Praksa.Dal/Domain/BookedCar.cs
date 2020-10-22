@@ -17,12 +17,5 @@ namespace RentaCar_Praksa.Dal.Domain
         public decimal TotalPrice { get; set; }
         public int ReviewID { get; set; }
         public Review Review { get; set; }
-
-        public BookedCar(string username):base(username)
-        {
-
-        }
-
-
     }
 }

@@ -13,11 +13,6 @@ namespace RentaCar_Praksa.Dal.Domain
         public int Rating { get; set; }
         public string Comment { get; set; }
         public DateTime DateCreated { get; set; }
-        public Review(string username) : base(username)
-        {
-
-        }
-
 
     }
 }

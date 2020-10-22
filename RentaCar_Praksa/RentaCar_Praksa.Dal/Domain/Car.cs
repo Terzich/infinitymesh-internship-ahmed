@@ -17,10 +17,7 @@ namespace RentaCar_Praksa.Dal.Domain
         public Color Color { get; set; }
         public List<BookedCar> BookedCars { get; set; }
 
-        public Car(string username):base(username)
-        {
-
-        }
+        
 
     }
 }
