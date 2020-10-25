@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RentaCar_Praksa.Dal;
 
 namespace RentaCar_Praksa
 {
@@ -25,7 +27,10 @@ namespace RentaCar_Praksa
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-                //.AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<LoginViewModel>());
+            //.AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<LoginViewModel>());
+
+            var connectionStrign = Configuration.GetConnectionString("RentaCarDatabase");
+            services.AddDbContext<RentaCarDbContext>(b => b.UseSqlServer(connectionStrign));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

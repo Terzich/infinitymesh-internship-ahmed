@@ -17,7 +17,7 @@ namespace RentaCar_Praksa.Dal.Domain
         public List<UserRole> UserRoles { get; set; }
         public int CityID { get; set; }
         public City City { get; set; }
-        //public List<BookedCar> BookedCars { get; set; }
+        public List<BookedCar> BookedCars { get; set; }
         public List<Contact> Contacts { get; set; }
 
     }
