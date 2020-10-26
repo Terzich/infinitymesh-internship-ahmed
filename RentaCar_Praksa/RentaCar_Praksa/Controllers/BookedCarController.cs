@@ -6,11 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RentaCar_Praksa.Controllers
 {
+    [Route("api/[controller]/[action]")]
+    [ApiController]
     public class BookedCarController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        
     }
 }

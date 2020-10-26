@@ -15,7 +15,6 @@ namespace RentaCar_Praksa.Dal.Domain
         public DateTime From { get; set; }
         public DateTime To { get; set; }
         public decimal TotalPrice { get; set; }
-        public int ReviewID { get; set; }
         public Review Review { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace RentaCar_Praksa.Dal.Repositories
 
         public async Task EditCar(int carId, CarDto car, CancellationToken cancellationToken = default)
         {
-            var carDomain = await _context.Cars.FindAsync(carId);
+            var carDomain = await _context.Cars.FindAsync(carId,cancellationToken);
             carDomain.CarName = car.CarName;
             carDomain.YearOFProduction = car.YearOFProduction;
             carDomain.HorsePower = car.HorsePower;
@@ -29,7 +29,7 @@ namespace RentaCar_Praksa.Dal.Repositories
             carDomain.ImageURL = car.ImageURL;
             carDomain.ColorID = car.ColorID;
             _context.Cars.Update(carDomain);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(cancellationToken);
 
         }
 
@@ -37,6 +37,13 @@ namespace RentaCar_Praksa.Dal.Repositories
         {
             var collection = await _context.Cars.ToListAsync(cancellationToken);
             return new CarViewModel(collection);
+        }
+
+        public async Task RemoveCar(int carId,CancellationToken cancellationToken=default)
+        {
+            var car = _context.Cars.Find(carId);
+            _context.Cars.Remove(car);
+            await _context.SaveChangesAsync(cancellationToken);
         }
 
         public async Task<int> SaveCar(CarDto car, CancellationToken cancellationToken = default)

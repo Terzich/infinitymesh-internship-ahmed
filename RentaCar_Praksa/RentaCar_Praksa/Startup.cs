@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 //using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,6 +30,7 @@ namespace RentaCar_Praksa
         {
             services.AddControllers();
             //.AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<LoginViewModel>());
+            services.AddAutoMapper(typeof(Startup));
 
             var connectionStrign = Configuration.GetConnectionString("RentaCarDatabase");
             services.AddDbContext<RentaCarDbContext>(b => b.UseSqlServer(connectionStrign));

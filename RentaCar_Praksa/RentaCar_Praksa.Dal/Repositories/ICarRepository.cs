@@ -11,7 +11,8 @@ namespace RentaCar_Praksa.Dal.Repositories
     {
         Task<CarViewModel> GetCars(CancellationToken cancellationToken = default);
         Task<int> SaveCar(CarDto car, CancellationToken cancellationToken = default);
-        Task EditCar(int carId, CarDto car, CancellationToken cancellationToken = default); 
+        Task EditCar(int carId, CarDto car, CancellationToken cancellationToken = default);
+        Task RemoveCar(int carId, CancellationToken cancellationToken=default);
 
     }
 }
