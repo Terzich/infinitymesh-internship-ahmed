@@ -9,6 +9,10 @@ namespace RentaCar_Praksa.Dal
 {
     public class RentaCarDbContext:DbContext
     {
+
+        public RentaCarDbContext(DbContextOptions<RentaCarDbContext>options):base(options)
+        {
+        }
         public DbSet<User> Users { get; set; }
         public DbSet<BookedCar> BookedCars { get; set; }
         public DbSet<Car> Cars { get; set; }

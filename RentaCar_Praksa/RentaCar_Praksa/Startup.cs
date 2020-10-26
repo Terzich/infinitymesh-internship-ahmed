@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RentaCar_Praksa.Dal;
+using RentaCar_Praksa.Dal.Repositories;
 
 namespace RentaCar_Praksa
 {
@@ -31,6 +32,7 @@ namespace RentaCar_Praksa
 
             var connectionStrign = Configuration.GetConnectionString("RentaCarDatabase");
             services.AddDbContext<RentaCarDbContext>(b => b.UseSqlServer(connectionStrign));
+            services.AddScoped<ICarRepository, SqlServerCarRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
