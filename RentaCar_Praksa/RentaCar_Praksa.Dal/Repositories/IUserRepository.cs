@@ -5,8 +5,8 @@ using System.Text;
 
 namespace RentaCar_Praksa.Dal.Repositories
 {
-    interface IUserRepository:IBaseRepository<User>
-    {
-        void Authenticate(string username, string password);
-    }
+    //interface IUserRepository:IBaseRepository<User>
+    //{
+    //    void Authenticate(string username, string password);
+    //}
 }
