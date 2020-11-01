@@ -8,12 +8,12 @@ namespace RentaCar_Praksa.Dal.ViewModel
 {
     public class CarViewModel
     {
-        public CarViewModel(IReadOnlyCollection<Car> cars)
+        public CarViewModel(List<Car> cars)
         {
             Collection = cars.Select(car => new CarDto(car)).ToList();
 
         }
 
-        public IReadOnlyCollection<CarDto> Collection { get; set; }
+        public List<CarDto> Collection { get; set; }
     }
 }
