@@ -34,10 +34,10 @@ namespace RentaCar_Praksa.Controllers
         }
 
         [HttpPut]
-        public async Task Edit(int carId, [FromBody]CarDto car)
+        public async Task<IActionResult> Edit (int carId, [FromBody]CarDto car)
         {
             await _carRepository.EditCar(carId, car);
-
+            return Ok(carId);
         }
 
 

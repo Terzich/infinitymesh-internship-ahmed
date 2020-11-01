@@ -19,7 +19,6 @@ namespace RentaCar_Praksa.Dal
         public DbSet<City> Cities { get; set; }
         public DbSet<Color> Colors { get; set; }
         public DbSet<Contact> Contacts { get; set; }
-        public DbSet<Review> Reviews { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
 
@@ -33,7 +32,6 @@ namespace RentaCar_Praksa.Dal
             modelBuilder.ApplyConfiguration(new ColorConfiguration());
             modelBuilder.ApplyConfiguration(new CarConfiguration());
             modelBuilder.ApplyConfiguration(new BookedCarConfiguration());
-            modelBuilder.ApplyConfiguration(new ReviewConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

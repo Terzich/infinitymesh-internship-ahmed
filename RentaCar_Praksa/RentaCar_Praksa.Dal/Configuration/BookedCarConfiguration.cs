@@ -17,7 +17,6 @@ namespace RentaCar_Praksa.Dal.Configuration
 
             builder.HasOne(b => b.Car).WithMany(b => b.BookedCars).HasForeignKey(b => b.CarID);
             builder.HasOne(b => b.User).WithMany(b => b.BookedCars).HasForeignKey(b => b.UserID);
-            builder.HasOne(b => b.Review).WithOne(b => b.BookedCar).HasForeignKey<Review>(b => b.BookedCarID);
 
             builder.HasData(new List<BookedCar>
             {

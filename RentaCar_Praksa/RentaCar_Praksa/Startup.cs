@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AutoMapper;
 //using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RentaCar_Praksa.Dal;
 using RentaCar_Praksa.Dal.Repositories;
+using RentaCar_Praksa.Dal.ViewModel;
 
 namespace RentaCar_Praksa
 {
@@ -30,11 +30,12 @@ namespace RentaCar_Praksa
         {
             services.AddControllers();
             //.AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<LoginViewModel>());
-            services.AddAutoMapper(typeof(Startup));
 
             var connectionStrign = Configuration.GetConnectionString("RentaCarDatabase");
             services.AddDbContext<RentaCarDbContext>(b => b.UseSqlServer(connectionStrign));
             services.AddScoped<ICarRepository, SqlServerCarRepository>();
+            services.AddScoped<IUserRepository, SqlServerUserRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +55,12 @@ namespace RentaCar_Praksa
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+
+            });
 
             app.UseAuthorization();
 

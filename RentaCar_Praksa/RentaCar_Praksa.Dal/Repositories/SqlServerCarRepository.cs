@@ -20,7 +20,7 @@ namespace RentaCar_Praksa.Dal.Repositories
 
         public async Task EditCar(int carId, CarDto car, CancellationToken cancellationToken = default)
         {
-            var carDomain = await _context.Cars.FindAsync(carId,cancellationToken);
+            var carDomain = await _context.Cars.FindAsync(carId);
             carDomain.CarName = car.CarName;
             carDomain.YearOFProduction = car.YearOFProduction;
             carDomain.HorsePower = car.HorsePower;
